@@ -1,0 +1,152 @@
+<{include file='header.html'}>
+<div class="page-content">
+    <div>
+        <div id="user-profile-1" class="user-profile row">
+            <div class="col-xs-12 col-sm-3 center">
+                <div>
+                    <div class="space-12"></div>
+                    <!-- #section:pages/profile.picture -->
+                    <span class="profile-picture">
+                        <img id="avatar" class="editable img-responsive editable-click editable-empty" alt="物品大图" src="<{$detailGoods.goods_Image}>" height="200" width="200">
+                    </span>
+
+                    <!-- /section:pages/profile.picture -->
+                    <div class="space-4"></div>
+
+
+                </div>
+
+                <div class="space-6"></div>
+
+                <div class="hr hr16 dotted"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+
+
+                <div class="space-12"></div>
+
+                <!-- #section:pages/profile.info -->
+                <div class="profile-user-info profile-user-info-striped">
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> 物品名称 </div>
+
+                        <div class="profile-info-value">
+                            <span class="editable editable-click" id="username"><{$detailGoods.goods_Name}></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> 价格 </div>
+
+                        <div class="profile-info-value">
+                            <span class="editable editable-click" id="age"><{$detailGoods.goods_Price}></span>
+                        </div>
+                    </div>
+
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> 介绍信息 </div>
+
+                        <div class="profile-info-value">
+
+                            <span class="editable editable-click" ><{$detailGoods.goods_Info}></span>
+
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> 发布人 </div>
+
+                        <div class="profile-info-value">
+
+                            <span class="editable editable-click" ><{$memberInfo.member_Name}></span>
+
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> 联系电话 </div>
+
+                        <div class="profile-info-value">
+
+                            <span class="editable editable-click" ><{$memberInfo.member_LinkTel}></span>
+
+                        </div>
+                    </div>
+                    
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> 邮箱 </div>
+
+                        <div class="profile-info-value">
+
+                            <span class="editable editable-click" ><{$memberInfo.member_Email}></span>
+
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> 院系 </div>
+
+                        <div class="profile-info-value">
+
+                            <span class="editable editable-click" ><{$memberInfo.member_Departments}></span>
+
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> 地址 </div>
+
+                        <div class="profile-info-value">
+
+                            <span class="editable editable-click" ><{$memberInfo.member_Address}></span>
+
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> 发布时间 </div>
+
+                        <div class="profile-info-value">
+                            <span class="editable editable-click" id="signup"><{$detailGoods.goods_CreateTime|date_format:"%Y-%m-%d %H:%M:%S"}></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- /section:pages/profile.info -->
+                <div class="space-20"></div>
+
+                <div class="hr hr2 hr-dotted"></div>
+
+                <div class="space-6"></div>
+
+            </div>
+
+        </div>
+        <{if $imageGoods}>
+        <div id="user-profile-2" class="user-profile row">
+
+            <ul class="ace-thumbnails clearfix">
+                
+                <{section name=key loop=$imageGoods}>
+                <!-- #section:pages/gallery.caption -->
+                <li>
+                    <a href="<{$imageGoods[key].image_URL}>" data-rel="colorbox" class="cboxElement">
+                        <img alt="150x150" src="<{$imageGoods[key].image_URL}>" height="150" width="150">
+
+                    </a>
+                </li>
+                <!-- /section:pages/gallery.caption -->
+                <{/section}>
+                
+            </ul>
+        </div><!-- PAGE CONTENT ENDS -->
+        <{/if}>
+    </div>
+</div>
+
+<{include file='footer.html'}>

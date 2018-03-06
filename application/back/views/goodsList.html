@@ -1,0 +1,41 @@
+<{include file='contentUp.html'}>
+<div class="page-content">
+<div class="row">
+    <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <div>
+            <ul class="ace-thumbnails clearfix">
+                
+                <{section name=key loop=$goodsInfo}>
+                <!-- #section:pages/gallery.caption -->
+                <li>
+                    <a href="<{$goodsInfo[key].goods_Image}>" data-rel="colorbox" class="cboxElement">
+                        <img alt="150x150" src="<{$goodsInfo[key].goods_Image}>" height="150" width="150">
+                        <div class="text">
+                            <div class="inner"><{$goodsInfo[key].goods_Name}></div>
+                        </div>
+                    </a>
+
+                    <div class="tools tools-bottom">
+                        <a href="index.php?p=back&c=goods&a=moreGoods&goods_ID=<{$goodsInfo[key].goods_ID}>" title='添加更多关于该物品图片'>
+                            <i class="ace-icon glyphicon glyphicon-plus"></i>
+                        </a>
+
+                        <a href="index.php?p=back&c=goods&a=update&goods_ID=<{$goodsInfo[key].goods_ID}>" title='修改物品信息'>
+                            <i class="ace-icon fa fa-pencil"></i>
+                        </a>
+
+                        
+                        <a href="index.php?p=back&c=goods&a=delete&goods_ID=<{$goodsInfo[key].goods_ID}>" title="删除">
+                            <i class="ace-icon glyphicon glyphicon-remove red"></i>
+                        </a>
+                    </div>
+                </li>
+                <!-- /section:pages/gallery.caption -->
+                <{/section}>
+            </ul>
+        </div><!-- PAGE CONTENT ENDS -->
+    </div><!-- /.col -->
+</div>
+</div>
+<{include file='contentDown.html'}>

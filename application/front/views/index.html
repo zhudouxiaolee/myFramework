@@ -1,0 +1,35 @@
+<{include file='header.html'}>
+<div class="page-content">
+    <div class="row">
+    <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <div>
+            <ul class="ace-thumbnails clearfix">
+                
+                <{section name=key loop=$goodsInfo}>
+                <!-- #section:pages/gallery.caption -->
+                <li style='margin-right: 30px;'>
+                    <a href="<{$goodsInfo[key].goods_Image}>" data-rel="colorbox" class="cboxElement">
+                        <img alt="150x150" src="<{$goodsInfo[key].goods_Image}>" height="150" width="150">
+                        <div class="text">
+                            <div class="inner"><{$goodsInfo[key].goods_Name}></div>
+                        </div>
+                    </a>
+
+                    <div class="tools tools-bottom">
+                        <a href="index.php?p=front&c=index&a=details&goods_ID=<{$goodsInfo[key].goods_ID}>" title='查看详细信息'>
+                            <i class="ace-icon glyphicon glyphicon-list"></i>
+                        </a>
+
+                  
+                    </div>
+                </li>
+                
+                <!-- /section:pages/gallery.caption -->
+                <{/section}>
+            </ul>
+        </div><!-- PAGE CONTENT ENDS -->
+    </div><!-- /.col -->
+</div>
+</div>
+<{include file='footer.html'}>
